@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  *
- * @author 
+ * @author Dell
  */
 @Service
 public class OrderService {
@@ -38,7 +38,7 @@ public class OrderService {
     
     @Transactional
     public void update(Long orderId, Integer jumlah, String tanggal, String status) {
-        
+        // TODO Auto-generated method stub
         Order order = orderRepository.findById(orderId).orElseThrow(() 
                 -> new IllegalStateException("Order tidak ada"));
         if (jumlah != null) {
@@ -56,22 +56,18 @@ public class OrderService {
     }
 
     public Order getOrderById(Long id) {
-        return orderRepository.findById(id).orElse(null);
+        return orderRepository.findById(id).get();
     }
     
     public List<ResponseTemplate> getOrderWithProdukById(Long id){
         List<ResponseTemplate> responseList = new ArrayList<>();
         Order order = getOrderById(id);
-        if (order != null) {
-            Produk produk= restTemplate.getForObject("http://localhost:9001/api/v1/produk/"
-                    + order.getProdukId(), Produk.class);
-            if (produk != null) {
-                ResponseTemplate vo = new ResponseTemplate();
-                vo.setOrder(order);
-                vo.setProduk(produk);
-                responseList.add(vo);
-            }
-        }
+        Produk produk = restTemplate.getForObject("http://localhost:9001/api/v1/produk/" 
+                + order.getProdukId(), Produk.class);       
+        ResponseTemplate vo = new ResponseTemplate();
+        vo.setOrder(order);    
+        vo.setProduk(produk);
+        responseList.add(vo);
         return responseList;
     }
 }

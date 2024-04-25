@@ -7,11 +7,12 @@ import com.dini.order.entity.Order;
 
 /**
  *
- * @author 
+ * @author Dell
  */
 public class ResponseTemplate {
     Produk produk;
     Order order;
+    
     
     public ResponseTemplate(){
         
@@ -19,9 +20,10 @@ public class ResponseTemplate {
 
     public ResponseTemplate(Order order, Produk produk) {
         this.order = order;
-        this.produk = produk;
+        this.produk = produk;    
     }
 
+    
     public Order getOrder() {
         return order;
     }
@@ -29,7 +31,6 @@ public class ResponseTemplate {
     public void setOrder(Order order) {
         this.order = order;
     }
-
     public Produk getProduk() {
         return produk;
     }
@@ -37,7 +38,8 @@ public class ResponseTemplate {
     public void setProduk(Produk produk) {
         this.produk = produk;
     }
-    
+
+   
     @Override
     public String toString() {
         return "ResponseTemplate{" + "produk=" + produk + ", order=" + order + '}';

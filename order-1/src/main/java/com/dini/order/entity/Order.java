@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author 
+ * @author Dell
  */
 @Entity
 @Table(name = "t_order")
@@ -30,7 +30,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long id, Long produkId, long pembayaranId, int jumlah, String tanggal, String status, double total) {
+    public Order(Long id, Long produkId,Long pembayaranId, int jumlah, String tanggal, String status, double total) {
         this.id = id;
         this.produkId = produkId;
         this.pembayaranId = pembayaranId;
@@ -59,11 +59,8 @@ public class Order {
     public Long getPembayaranId() {
         return pembayaranId;
     }
-
-    public void setPembayaranId(Long pembayaranId) {
-        this.pembayaranId = pembayaranId;
-    }
-
+    
+    
     public int getJumlah() {
         return jumlah;
     }
@@ -79,6 +76,7 @@ public class Order {
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
     }
+    
 
     public String getStatus() {
         return status;
@@ -100,5 +98,4 @@ public class Order {
     public String toString() {
         return "Order{" + "id=" + id + ", produkId=" + produkId + ", pembayaranId=" + pembayaranId + ", jumlah=" + jumlah + ", tanggal=" + tanggal + ", status=" + status + ", total=" + total + '}';
     }
-
 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author 
+ * @author Dell
  */
 @RestController
 @RequestMapping("api/v1/order")
@@ -41,7 +41,7 @@ public class OrderController {
     public List<ResponseTemplate> getOrderWithProdukById(@PathVariable("id") Long id) {
         return orderService.getOrderWithProdukById(id);
     }
-   
+    
     @PutMapping(path = "{id}")
     public void updateOrder(@PathVariable ("id") Long id,
             @RequestParam(required = false) int jumlah,
@@ -52,4 +52,5 @@ public class OrderController {
     ){
         orderService.update(id, jumlah, tangggal, status);
     }
+            
 }

@@ -6,10 +6,11 @@ package com.dini.order.vo;
 
 /**
  *
- * @author 
+ * @author Dell
  */
 
-public class Produk { 
+public class Produk {
+  
     private Long id;
     private String kode;
     private String nama;
@@ -56,10 +57,10 @@ public class Produk {
     public void setSatuan(String satuan) {
         this.satuan = satuan;
     }
-    
-  @Override
+
+        @Override
     public String toString() {
-        return super.toString(); 
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
