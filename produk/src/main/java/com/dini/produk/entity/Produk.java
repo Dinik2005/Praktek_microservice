@@ -3,18 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.dini.produk.entity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 /**
  *
- * @author ASUS
+ * @Dell
  */
 @Entity
 @Table
-
 public class Produk {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,5 +71,4 @@ public class Produk {
         return "Produk{" + "id=" + id + ", kode=" + kode + ", nama=" + nama + ", satuan=" + satuan + '}';
     }
     
-      
 }

@@ -7,12 +7,11 @@ package com.dini.produk.repository;
 import com.dini.produk.entity.Produk;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
 /**
  *
- * @author 
+ * @Dell
  */
 @Repository
 public interface ProdukRepository extends JpaRepository<Produk, Long> {
-    
-    
 }
