@@ -14,23 +14,17 @@ import java.util.List;
 
 /**
  *
- * @author 
+ * @Dell
  */
 @RestController
 @RequestMapping("api/v1/pembayaran")
 public class PembayaranController {
-
     @Autowired
     private PembayaranService pembayaranService;
-
-    @GetMapping
+    
+   @GetMapping
     public List<Pembayaran> getAll() {
         return pembayaranService.getAll();
-    }
-    
-      @GetMapping(path = "/produk/{id}")
-    public List<ResponseTemplate> getPembayaranWithProdukById(@PathVariable("id") Long id) {
-        return pembayaranService.getPembayaranWithProdukById(id);
     }
     
     @GetMapping(path = "{id}")
@@ -38,4 +32,12 @@ public class PembayaranController {
         return pembayaranService.getPembayaran(id);
     }
 
+    @PostMapping
+    public void insertPembayaran(@RequestBody Pembayaran pembayaran) {
+        pembayaranService.insert(pembayaran);
+    } 
+     @GetMapping(path = "/order/produk/{id}")
+    public List<ResponseTemplate>getPembayaranWithOrderkById(@PathVariable("id") Long id) {
+        return pembayaranService.getPembayaranWithOrderkById(id);
+    }
 }

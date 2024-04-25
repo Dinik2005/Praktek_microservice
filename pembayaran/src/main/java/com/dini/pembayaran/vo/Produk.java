@@ -9,8 +9,9 @@ package com.dini.pembayaran.vo;
  * @author Dell
  */
 
-public class Produk { 
-    private Long id;
+public class Produk {
+  
+    private Long id_produk;
     private String kode;
     private String nama;
     private String satuan;
@@ -18,19 +19,19 @@ public class Produk {
     public Produk() {
     }
 
-    public Produk(Long id, String kode, String nama, String satuan) {
-        this.id = id;
+    public Produk(Long id_produk, String kode, String nama, String satuan) {
+        this.id_produk = id_produk;
         this.kode = kode;
         this.nama = nama;
         this.satuan = satuan;
     }
 
     public Long getId() {
-        return id;
+        return id_produk;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_produk = id;
     }
 
     public String getKode() {
@@ -56,10 +57,10 @@ public class Produk {
     public void setSatuan(String satuan) {
         this.satuan = satuan;
     }
-    
-  @Override
+
+        @Override
     public String toString() {
-        return super.toString(); 
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

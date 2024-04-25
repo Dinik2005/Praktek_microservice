@@ -13,33 +13,35 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author 
+ * @Dell
  */
 @Entity
 @Table
 public class Pembayaran {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String mode_pembayaran;
+    private Long order_Id;
+    private String mode_pemabayaran;
     private int ref_number;
-    private String tgl_bayar;
+    private String tgl_pembayaran;
     private String status;
-    private Double total;
-    private Long produkid;
+    private double total;
     
-    public Pembayaran(){    
+    public Pembayaran(){
+        
     }
 
-    public Pembayaran(Long id, Long produkid, String mode_pembayaran, int ref_number, String tgl_bayar, String status, Double total) {
+    public Pembayaran(Long id, Long order_Id, String mode_pemabayaran, int ref_number, String tgl_pembayaran, String status, double total) {
         this.id = id;
-        this.produkid = produkid;
-        this.mode_pembayaran = mode_pembayaran;
+        this.order_Id = order_Id;
+        this.mode_pemabayaran = mode_pemabayaran;
         this.ref_number = ref_number;
-        this.tgl_bayar = tgl_bayar;
+        this.tgl_pembayaran = tgl_pembayaran;
         this.status = status;
         this.total = total;
     }
+    
 
     public Long getId() {
         return id;
@@ -49,20 +51,20 @@ public class Pembayaran {
         this.id = id;
     }
 
-    public Long getProdukId() {
-        return produkid;
+    public Long getOrder_Id() {
+        return order_Id;
     }
 
-    public void setProdukId(Long produkid) {
-        this.produkid = produkid;
+    public void setOrder_Id(Long order_Id) {
+        this.order_Id = order_Id;
     }
 
-    public String getMode_pembayaran() {
-        return mode_pembayaran;
+    public String getMode_pemabayaran() {
+        return mode_pemabayaran;
     }
 
-    public void setMode_pembayaran(String mode_pembayaran) {
-        this.mode_pembayaran = mode_pembayaran;
+    public void setMode_pemabayaran(String mode_pemabayaran) {
+        this.mode_pemabayaran = mode_pemabayaran;
     }
 
     public int getRef_number() {
@@ -73,12 +75,12 @@ public class Pembayaran {
         this.ref_number = ref_number;
     }
 
-    public String getTgl_bayar() {
-        return tgl_bayar;
+    public String getTgl_pembayaran() {
+        return tgl_pembayaran;
     }
 
-    public void setTgl_bayar(String tgl_bayar) {
-        this.tgl_bayar = tgl_bayar;
+    public void setTgl_pembayaran(String tgl_pembayaran) {
+        this.tgl_pembayaran = tgl_pembayaran;
     }
 
     public String getStatus() {
@@ -89,24 +91,19 @@ public class Pembayaran {
         this.status = status;
     }
 
-    public Double getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(double total) {
         this.total = total;
     }
-
-    public Long getProdukid() {
-        return produkid;
-    }
-
-    public void setProdukid(Long produkid) {
-        this.produkid = produkid;
-    }
+    
 
     @Override
     public String toString() {
-        return "Pembayaran{" + "id=" + id + ", produkid=" + produkid + ", mode_pembayaran=" + mode_pembayaran + ", ref_number=" + ref_number + ", tgl_bayar=" + tgl_bayar + ", status=" + status + ", total=" + total + ", produkid=" + produkid + '}';
+        return "Pembayaran{" + "id=" + id + ", order_Id=" + order_Id + ", mode_pemabayaran=" + mode_pemabayaran + ", ref_number=" + ref_number + ", tgl_pembayaran=" + tgl_pembayaran + ", status=" + status + ", total=" + total + '}';
     }
+    
+    
 }
