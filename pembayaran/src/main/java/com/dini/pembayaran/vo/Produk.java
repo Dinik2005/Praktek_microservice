@@ -6,7 +6,7 @@ package com.dini.pembayaran.vo;
 
 /**
  *
- * @author Dini
+ * @author Dell
  */
 
 public class Produk {

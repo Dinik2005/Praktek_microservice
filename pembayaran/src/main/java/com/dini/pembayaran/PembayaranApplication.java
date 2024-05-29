@@ -11,7 +11,8 @@ public class PembayaranApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PembayaranApplication.class, args);
 	}
-        @Bean
+        
+           @Bean
         public RestTemplate restTemplate (){
             return new RestTemplate();
         }

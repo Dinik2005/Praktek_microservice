@@ -4,10 +4,10 @@
  */
 package com.dini.pembayaran.service;
 
-import com.dini.pembayaran.Repository.PembayaranRepository;
 import com.dini.pembayaran.entity.Pembayaran;
-import com.dini.pembayaran.vo.Order;
+import com.dini.pembayaran.repository.PembayaranRepository;
 import com.dini.pembayaran.vo.Produk;
+import com.dini.pembayaran.vo.Order;
 import com.dini.pembayaran.vo.ResponseTemplate;
 import jakarta.transaction.Transactional;
 import java.util.ArrayList;
@@ -17,9 +17,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ *
+ * @author Dini
+ */
 @Service
 public class PembayaranService {
-     @Autowired
+    @Autowired
     private PembayaranRepository pembayaranRepository;
      @Autowired
     private RestTemplate restTemplate;
@@ -56,31 +60,29 @@ public class PembayaranService {
     }
      
     @Transactional
-    public void update (Long id, Long order_Id, String mode_pemabayaran, Integer ref_number, String tgl_pembayaran, String status, Double total){
-        Pembayaran pembayaran = pembayaranRepository.findById(order_Id)
-                .orElseThrow(
-                        ()->new IllegalStateException("Pembayaran Tidak ada")
-                );
-        if(mode_pemabayaran != null && mode_pemabayaran.length()>0
-                && !Objects.equals(pembayaran.getMode_pemabayaran(), mode_pemabayaran)){
-            pembayaran.setMode_pemabayaran(mode_pemabayaran);
-        }
-        if (ref_number != null) {
-            pembayaran.setRef_number(ref_number);
-        }
-        if(tgl_pembayaran != null && tgl_pembayaran.length()>0
-                && !Objects.equals(pembayaran.getTgl_pembayaran(), tgl_pembayaran)){
-            pembayaran.setTgl_pembayaran(tgl_pembayaran);
-        }
-        if(status != null && status.length()>0
-                && !Objects.equals(pembayaran.getStatus(), status)){
-            pembayaran.setStatus(status);
-        }
-        if(total != null
-                && !Objects.equals(pembayaran.getTotal(), total)){
-            pembayaran.setTotal(total);
-        }
-    } 
+public void update(Long id, Long order_Id, String mode_pemabayaran, Integer ref_number, String tgl_pembayaran, String status, Double total) {
+    // Mencari entitas Pembayaran berdasarkan ID yang benar (gunakan parameter id)
+    Pembayaran pembayaran = pembayaranRepository.findById(id)
+            .orElseThrow(() -> new IllegalStateException("Pembayaran tidak ada"));
+    
+    // Memperbarui entitas Pembayaran jika ada perubahan data
+    if (mode_pemabayaran != null && mode_pemabayaran.length() > 0 && !Objects.equals(pembayaran.getMode_pemabayaran(), mode_pemabayaran)) {
+        pembayaran.setMode_pemabayaran(mode_pemabayaran);
+    }
+    if (ref_number != null) {
+        pembayaran.setRef_number(ref_number);
+    }
+    if (tgl_pembayaran != null && tgl_pembayaran.length() > 0 && !Objects.equals(pembayaran.getTgl_pembayaran(), tgl_pembayaran)) {
+        pembayaran.setTgl_pembayaran(tgl_pembayaran);
+    }
+    if (status != null && status.length() > 0 && !Objects.equals(pembayaran.getStatus(), status)) {
+        pembayaran.setStatus(status);
+    }
+    if (total != null && !Objects.equals(pembayaran.getTotal(), total)) {
+        pembayaran.setTotal(total);
+    }
+}
+ 
      
     public void delete(Long produkId){
         pembayaranRepository.deleteById(produkId);
