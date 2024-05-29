@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @Dell
+ * @AuthorDini
  */
 public interface PembayaranRepository extends JpaRepository<Pembayaran, Long> {
 }

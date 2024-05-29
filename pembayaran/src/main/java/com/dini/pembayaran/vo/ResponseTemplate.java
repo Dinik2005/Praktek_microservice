@@ -7,7 +7,7 @@ import com.dini.pembayaran.entity.Pembayaran;
 
 /**
  *
- * @author Dell
+ * @author 
  */
 public class ResponseTemplate {
     Pembayaran pembayaran;
@@ -26,8 +26,7 @@ public class ResponseTemplate {
     
         
     }
-
-    
+ 
     public Order getOrder() {
         return order;
     }

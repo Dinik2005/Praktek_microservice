@@ -8,7 +8,7 @@ package com.dini.pembayaran.vo;
 
 /**
  *
- * @author Dell
+ * @author 
  */
 public class Order {
     
@@ -89,7 +89,7 @@ public class Order {
     
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
-    }
+        return super.toString(); 
+        }
     
 }

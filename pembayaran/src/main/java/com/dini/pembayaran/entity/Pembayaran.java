@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @Dell
+ * @Author Dini
  */
 @Entity
 @Table
@@ -104,6 +104,4 @@ public class Pembayaran {
     public String toString() {
         return "Pembayaran{" + "id=" + id + ", order_Id=" + order_Id + ", mode_pemabayaran=" + mode_pemabayaran + ", ref_number=" + ref_number + ", tgl_pembayaran=" + tgl_pembayaran + ", status=" + status + ", total=" + total + '}';
     }
-    
-    
 }
