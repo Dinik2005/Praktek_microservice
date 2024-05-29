@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author Dell
+ * @author Dini
  */
 @Entity
 @Table(name = "t_order")

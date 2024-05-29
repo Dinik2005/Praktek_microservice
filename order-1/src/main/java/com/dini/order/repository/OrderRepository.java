@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author Dell
+ * @author Dini
  */
 public interface OrderRepository extends JpaRepository<Order, Long> {
     

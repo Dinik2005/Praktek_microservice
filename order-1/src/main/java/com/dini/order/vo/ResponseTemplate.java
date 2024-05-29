@@ -7,7 +7,7 @@ import com.dini.order.entity.Order;
 
 /**
  *
- * @author Dell
+ * @author 
  */
 public class ResponseTemplate {
     Produk produk;

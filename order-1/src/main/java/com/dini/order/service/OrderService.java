@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  *
- * @author Dell
+ * @author 
  */
 @Service
 public class OrderService {
@@ -52,7 +52,6 @@ public class OrderService {
                 && !Objects.equals(order.getStatus(), status)) {
             order.setStatus(status);
         }
-
     }
 
     public Order getOrderById(Long id) {
@@ -69,5 +68,9 @@ public class OrderService {
         vo.setProduk(produk);
         responseList.add(vo);
         return responseList;
+    }
+    
+     public void deleteOrder(Long id) {
+        orderRepository.deleteById(id);
     }
 }

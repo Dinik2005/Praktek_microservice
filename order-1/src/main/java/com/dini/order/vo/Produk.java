@@ -6,7 +6,7 @@ package com.dini.order.vo;
 
 /**
  *
- * @author Dell
+ * @author Dini
  */
 
 public class Produk {
@@ -60,7 +60,6 @@ public class Produk {
 
         @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
-    }
+        return super.toString();}
 
 }
